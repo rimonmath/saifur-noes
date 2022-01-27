@@ -18,7 +18,7 @@
         </div>
         <b-row>
           <b-col md="8" offset-md="2">
-            <p class="font-18">
+            <p class="font-18 mt-2">
               <i>Choose subject:</i>
             </p>
 
@@ -135,6 +135,11 @@ export default {
 .subject-list__item {
   border-bottom: 1px solid #eee;
   padding: 11px 0;
+  transition: all 0.25s;
+}
+
+.subject-list__item:hover {
+  opacity: 0.8;
 }
 
 .subject-list__item:last-child {
