@@ -52,11 +52,57 @@ body {
 .page-bg {
   position: absolute;
   top: 0;
-  bottom: 0;
   left: 0;
   right: 0;
   z-index: -1;
   background-image: url(/img/page-bg.jpg);
   background-position: center center;
   background-size: cover;
+  height: 555px;
+}
+
+.page-bg--small {
+  height: 400px !important;
+}
+
+.list-table {
+  width: 100%;
+}
+
+.list-table th {
+  border-bottom-width: 1px;
+  padding: 12px 8px;
+  vertical-align: middle;
+  border-bottom: 2px solid #ddd;
+  line-height: 1.42857143;
+  font-size: 17px;
+  font-weight: 300;
+}
+
+.list-table td {
+  font-size: 17px;
+  font-weight: 300;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-bottom: 1px solid #ddd;
+  padding: 12px 8px;
+}
+
+
+.list-table tr:last-child td {
+ 
+  border-bottom: 0;
+ }
+
+
+
+
+.list-table td a {
+  color: #0092af;
+  transition: .3s ease;
+  text-decoration: none;
+}
+
+.list-table td a:hover {
+  opacity: .75;
 }

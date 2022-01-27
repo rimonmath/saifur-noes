@@ -72,10 +72,15 @@ export default {
   justify-content: flex-end;
   list-style: none;
   line-height: 1.618;
+  margin-bottom: 0;
 }
 
 .navbar__item {
   position: relative;
+}
+
+.navbar__items ul {
+  margin-bottom: 0;
 }
 
 .navbar__item a {

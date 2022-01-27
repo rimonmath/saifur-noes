@@ -18,41 +18,25 @@
         </div> -->
         <b-row>
           <b-col md="8" offset-md="2">
-            <p class="font-18 mt-2">
-              <i>Choose subject:</i>
-            </p>
+            <table class="list-table">
+              <thead>
+                <tr>
+                  <th>Subject</th>
+                  <th>Browse</th>
+                </tr>
+              </thead>
 
-            <div class="subject-list" v-if="activePageData.cols == 2">
-              <div
-                class="subject-list__item"
-                v-for="subject in activePageData.subjects"
-                :key="subject.icon"
-              >
-                <b-row>
-                  <b-col md="6">
-                    <b-link :to="subject.url">
-                      <img :src="subject.icon" alt="" />
-                    </b-link>
-                  </b-col>
-
-                  <b-col md="6">
-                    <b-link :to="subject.url1">
-                      <img :src="subject.icon1" alt="" />
-                    </b-link>
-                  </b-col>
-                </b-row>
-              </div>
-            </div>
-
-            <div class="subject-list" v-else>
-              <div
-                class="pt-2 pb-2"
-                v-for="subject in activePageData.subjects"
-                :key="subject.icon"
-              >
-                <img :src="subject.icon" alt="" />
-              </div>
-            </div>
+              <tbody>
+                <tr v-for="paper in activePageData.papers" :key="paper.name">
+                  <td>
+                    {{ paper.name }}
+                  </td>
+                  <td>
+                    <router-link :to="paper.url"> Browse </router-link>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
           </b-col>
           <!-- <b-col md="6">
             <list-card card-title="IGCSE" :items="igcseItems"> </list-card>
@@ -85,17 +69,16 @@
 </template>
 
 <script>
-import { revPageData } from "../data/revPageData";
+import { pastPapers } from "../data/pastPapers";
 // console.log(revPageData);
 
 export default {
   data: () => ({
-    pageData: revPageData,
+    pageData: pastPapers,
   }),
   computed: {
     activePageData() {
       let revType = this.$route.params.type || "igcse";
-      console.log(revType);
       return this.pageData[revType];
     },
   },

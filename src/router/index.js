@@ -17,6 +17,12 @@ const routes = [
       import("../views/RevNotes.vue")
   },
   {
+    path: "/past-papers/:type",
+    name: "PastPapers",
+    component: () =>
+      import("../views/PastPapers.vue")
+  },
+  {
     path: "/about",
     name: "About",
 

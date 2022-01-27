@@ -2,7 +2,9 @@
   <b-container>
     <header class="header">
       <div class="header__left">
-        <img class="header__logo" src="/img/logo.png" alt="" />
+        <b-link to="/">
+          <img class="header__logo" src="/img/logo.jpg" alt="" />
+        </b-link>
       </div>
       <div class="header__right">
         <the-navbar></the-navbar>
@@ -30,6 +32,10 @@ export default {
 .header__left {
   display: flex;
   align-items: center;
+}
+
+.header__left:hover {
+  opacity: 0.8;
 }
 
 .header__right {

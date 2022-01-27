@@ -72,11 +72,13 @@ export default {
 </script>
 
 <style>
-.page-bg {
-  height: 555px;
-}
-
 .browse-button {
   color: #fff !important;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
+  padding-left: 33px !important;
+  padding-right: 33px !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
 }
 </style>
