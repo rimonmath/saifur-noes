@@ -1,6 +1,9 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
+import About from "../views/About.vue";
+import RevNotes from "../views/RevNotes.vue";
+import PastPapers from "../views/PastPapers.vue";
 
 Vue.use(VueRouter);
 
@@ -13,21 +16,18 @@ const routes = [
   {
     path: "/revision-notes/:type",
     name: "RevisionNotes",
-    component: () =>
-      import("../views/RevNotes.vue")
+    component: RevNotes
   },
   {
     path: "/past-papers/:type",
     name: "PastPapers",
-    component: () =>
-      import("../views/PastPapers.vue")
+    component: PastPapers
   },
   {
     path: "/about",
     name: "About",
 
-    component: () =>
-      import("../views/About.vue")
+    component: About
   }
 ];
 
