@@ -1,32 +1,12 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
 import {
+  faBars,
   faHome,
-  faAngleDown,
-  faPalette,
-  faTachometerAlt,
-  faEnvelope,
-  faUserFriends,
-  faAngleRight,
-  faUserLock,
-  faExclamationTriangle,
-  faChevronLeft,
-  faSearch,
-  faBell,
-  faChevronRight
+  faTimes
 } from "@fortawesome/free-solid-svg-icons";
 
 library.add(
   faHome,
-  faAngleDown,
-  faPalette,
-  faTachometerAlt,
-  faEnvelope,
-  faUserFriends,
-  faAngleRight,
-  faUserLock,
-  faExclamationTriangle,
-  faChevronLeft,
-  faSearch,
-  faBell,
-  faChevronRight
+  faBars,
+  faTimes
 );

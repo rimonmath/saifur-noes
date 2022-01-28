@@ -9,7 +9,11 @@
           </span>
           <div class="mt-5">
             <a href="#about" title="Browse">
-              <b-button variant="info" size="lg" class="browse-button">
+              <b-button
+                variant="info"
+                size="lg"
+                class="browse-button mb-5 mb-md-0"
+              >
                 BROWSE
               </b-button>
             </a>

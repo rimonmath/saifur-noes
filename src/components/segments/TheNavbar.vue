@@ -1,29 +1,47 @@
 <template>
   <div class="navbar">
-    <ul class="navbar__items" v-for="navItem in navItems" :key="navItem.name">
-      <li class="navbar__item" v-if="!navItem.children">
-        <b-link :title="navItem.name" :to="navItem.to">
-          {{ navItem.name }}
-        </b-link>
-      </li>
-      <li class="navbar__item navbar__item--dropdown" v-else>
-        <b-link title="Revision Notes" to="#" class="dropdown-toggle">
-          {{ navItem.name }}
-          <span class="caret-wrap"><span class="caret"></span></span>
-        </b-link>
+    <ul class="navbar__items">
+      <!-- <li
+        v-for="navItem in navItems"
+        :key="navItem.name"
+        class="navbar__item"
+      > -->
+      <template v-for="navItem in navItems">
+        <li
+          v-if="!navItem.children"
+          :key="navItem.name"
+          class="navbar__item"
+          @click="$emit('close')"
+        >
+          <b-link :title="navItem.name" :to="navItem.to">
+            {{ navItem.name }}
+          </b-link>
+        </li>
 
-        <ul class="navbar__dropdown-menu">
-          <li
-            class="navbar__dropdown-item"
-            v-for="childItem in navItem.children"
-            :key="childItem.name"
-          >
-            <b-link :title="childItem.name" :to="childItem.to">
-              {{ childItem.name }}
-            </b-link>
-          </li>
-        </ul>
-      </li>
+        <li
+          class="navbar__item navbar__item--dropdown"
+          :key="navItem.name + 'd'"
+          v-else
+        >
+          <b-link title="Revision Notes" to="#" class="dropdown-toggle">
+            {{ navItem.name }}
+            <span class="caret-wrap"><span class="caret"></span></span>
+          </b-link>
+
+          <ul class="navbar__dropdown-menu">
+            <li
+              class="navbar__dropdown-item"
+              v-for="childItem in navItem.children"
+              :key="childItem.name"
+              @click="$emit('close')"
+            >
+              <b-link :title="childItem.name" :to="childItem.to">
+                {{ childItem.name }}
+              </b-link>
+            </li>
+          </ul>
+        </li>
+      </template>
     </ul>
   </div>
 </template>
@@ -136,5 +154,14 @@ export default {
 
 .navbar__dropdown-menu a:hover {
   color: #0092af;
+}
+
+@media (max-width: 768px) {
+  .navbar__items {
+    display: block;
+  }
+  .navbar__item a {
+    color: #777;
+  }
 }
 </style>

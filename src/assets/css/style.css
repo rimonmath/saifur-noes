@@ -16,10 +16,15 @@ body {
 .page-intro {
   min-height: 77px;
   color: #fff;
+  padding: 120px 46px 0 46px;
   /* background-image: url(/img/page-bg.jpg);
   background-position: center top;
   background-size: 100% 100%;
   background-repeat: no-repeat; */
+}
+
+img {
+  max-width: 100%;
 }
 
 .page-title {
@@ -105,4 +110,30 @@ body {
 
 .list-table td a:hover {
   opacity: .75;
+}
+
+
+@media (max-width: 768px) {
+  .page-title {
+    font-size: 36px;
+  }
+/*   
+  .page-title--small {
+    font-size: 42px;
+    margin: 20px 0 10px;
+    line-height: 1.4;
+  } */
+
+  .main-page {
+    margin: 0;
+
+    border-radius: 0;
+  }
+
+  .main-page__container {
+    margin-top: 55px;
+    padding: 33px 22px;
+  }
+  
+  
 }
